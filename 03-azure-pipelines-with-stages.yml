@@ -10,7 +10,7 @@ stages:
   - job:  FirstJob
     steps:
     - bash: "echo Build First Job"
-    - bash: $(PipeLineVar)
+    - bash: echo $(PipeLineVar)
   - job:  secondjob
     steps:
     - bash: "echo Build secondjob"
@@ -49,7 +49,7 @@ stages:
   - job:  ProdDeployJob
     steps:
     - bash: "echo $(environment)DeployJob"
-  displayName: 'ProdDep'
+  displayName: 'ProdD'
 
 #--------------------------------#
 
