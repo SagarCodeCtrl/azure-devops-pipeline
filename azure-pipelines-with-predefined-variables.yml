@@ -11,8 +11,6 @@ stages:
     steps:
     - bash: echo Build First Job
     - bash: echo $(envvar)
-  - job:  secondjob
-    steps:
     - bash: "echo Build secondjob"
     - bash: echo $(Build.BuildNumber)
     - bash: echo $(Build.BuildId)
