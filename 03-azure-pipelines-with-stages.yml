@@ -19,7 +19,7 @@ stages:
 
 - stage: DevDeploy
   variables:
-    environmet : "Dev"
+    environmet : Dev
   dependsOn: Build
   jobs:
   - job:  DevDeployJob
@@ -30,7 +30,7 @@ stages:
 
 - stage: QADeploy
   variables:
-    environmet : "QA"
+    environmet : QA
   dependsOn: Build
   jobs:
   - job:  QADeployJob
@@ -41,7 +41,7 @@ stages:
 
 - stage: ProdDeploy
   variables:
-    environmet : "Prod"
+    environmet : Prod
   dependsOn:
   - Build
   - QADeploy
