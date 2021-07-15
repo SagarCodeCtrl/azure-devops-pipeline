@@ -14,9 +14,10 @@ stages:
     - bash: "echo Build secondjob"
     - bash: echo $(Build.BuildNumber)
     - bash: echo $(Build.BuildId)
-    - bash: echo $(Build.SourceBranchName)
-    - bash: echo $(Build.SourceBranch)
-    - bash: echo $(System.DefaultWorkingDirectory)
+    - bash: echo Branch name is $(Build.SourceBranchName)
+    - bash: echo Source Dir is $(Build.SourcesDirectory)
+    - bash: echo Source Branch is$(Build.SourceBranch)
+    - bash: echo Default Working dir is $(System.DefaultWorkingDirectory)
     - bash: ls -R $(System.DefaultWorkingDirectory)
     - bash: echo $(Build.ArtifactStagingDirectory)
     - bash: echo echo
