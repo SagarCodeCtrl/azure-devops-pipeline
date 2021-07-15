@@ -11,7 +11,6 @@ stages:
     steps:
     - bash: echo Build First Job
     - bash: echo $(envvar)
-    - bash: "echo Build secondjob"
     - bash: echo $(Build.BuildNumber)
     - bash: echo $(Build.BuildId)
     - bash: echo Branch name is $(Build.SourceBranchName)
@@ -20,4 +19,16 @@ stages:
     - bash: echo Default Working dir is $(System.DefaultWorkingDirectory)
     - bash: ls -R $(System.DefaultWorkingDirectory)
     - bash: echo $(Build.ArtifactStagingDirectory)
-    - bash: echo echo
+    - bash: java -version
+    - bash: python --version
+    - bash: node --version
+    - bash: mvn -version
+    - bash: ls -R $(Build.ArtifactStagingDirectory)
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(System.DefaultWorkingDirectory)'
+        Contents: |
+          **/*.yaml
+          **/*.tf
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    - bash: ls -R $(Build.ArtifactStagingDirectory)
