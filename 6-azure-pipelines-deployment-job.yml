@@ -16,7 +16,7 @@ stages:
   #  - job: BuildJob
   #    steps:
   #    - bash: echo Start Dev Deploy!
-   - deployment: Dev Deployment Job
+   - deployment: Dev_Deployment_Job
      environment: Dev
      strategy:
       runOnce:
@@ -26,7 +26,7 @@ stages:
 
  - stage: QADeploy
    jobs:
-   - deployment: QA Deployment Job
+   - deployment: QA_Deployment_Job
      environment: QA
      strategy:
       runOnce:
