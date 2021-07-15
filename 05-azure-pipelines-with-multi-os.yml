@@ -13,9 +13,9 @@ pool:
 
 steps:
 - script: echo Hello, world from $(operatingSystem)!
-  displayName: 'Run a one-line script'
+  displayName: 'Multi OS Pipeline'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
-  displayName: 'Multi OS Pipeline'
+  displayName: 'Run a one line Script'
