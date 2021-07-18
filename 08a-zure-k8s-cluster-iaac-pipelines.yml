@@ -38,3 +38,12 @@ steps:
     allowTelemetryCollection: false
   displayName: 'Terraform apply'
 
+- task: TerraformCLI@0
+  inputs:
+    command: 'destroy'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
+    environmentServiceName: 'azure-rm-service-connection'
+    allowTelemetryCollection: false
+  displayName: 'Terraform apply'
+
+
